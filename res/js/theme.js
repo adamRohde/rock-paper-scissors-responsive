@@ -17,7 +17,7 @@ document.getElementById("light-mode").onclick = function () {
     root.style.setProperty("--theme-color-text", "rgb(0, 0, 0)");
     root.style.setProperty("--theme-color-burger", "rgb(64, 64, 64)");
     root.style.setProperty("--theme-color-hands", "tan");
-    root.style.setProperty("--theme-color-buttons", "rgb(64, 64, 64)");
+    root.style.setProperty("--theme-color-buttons", "lightgray");
 };
 
 // Dark Theme Colors

@@ -37,13 +37,27 @@ let timeleft;
 const gameStatusAndCountDown = document.getElementById("game-countdown-and-status");
 
 //0
-window.addEventListener("load", (event) => {
+window.addEventListener("load", () => {
     document.getElementById("the-humans-play").innerHTML = " ";
     document.getElementById("the-computers-play").innerHTML = " ";
 });
 
+$("#myDropdown").on("hide.bs.dropdown", () => {
+    console.log("show dropdown");
+    document.body.addEventListener("click", countDown);
+});
+
 //1
 document.body.addEventListener("click", countDown);
+
+document.getElementById("dropdownMenuButton").onclick = () => {
+    document.body.removeEventListener("click", countDown);
+};
+
+$(".dropdownMenuButton").on("hide.bs.dropdown", function () {
+    console.log("Drop down has been hidden");
+    document.body.addEventListener("click");
+});
 
 //2a
 function countDown() {
