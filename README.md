@@ -1,5 +1,5 @@
 
-Simple template with nav bar, burger menus and dark and light themes
+My interpretation of the classic game, rock, paper, scissors.  
 
 
-https://adamrohde.github.io/base-template/
+https://adamrohde.github.io/rock-paper-scissors/
