@@ -1,4 +1,6 @@
 let root = document.querySelector(":root");
+let mySpeed;
+window.counterSpeed;
 
 document.getElementById("dark-mode").onclick = () => {
     root.style.setProperty("--theme-color-nav", "rgb(19, 13, 13)");
@@ -16,6 +18,17 @@ document.getElementById("light-mode").onclick = () => {
     root.style.setProperty("--theme-color-text", "rgb(0, 0, 0)");
     root.style.setProperty("--theme-color-burger", "rgb(64, 64, 64)");
     root.style.setProperty("--theme-color-buttons", "lightgray");
+};
+
+// --------------------------------------  speed settings  --------------------------------------
+document.getElementById("fast-speed").onclick = () => {
+    window.counterSpeed = mySpeed = lastUpdated(0);
+};
+document.getElementById("medium-speed").onclick = () => {
+    window.counterSpeed = mySpeed = lastUpdated(1);
+};
+document.getElementById("slow-speed").onclick = () => {
+    window.counterSpeed = mySpeed = lastUpdated(2);
 };
 
 document.getElementById("select-tone-6").onclick = () => {
@@ -43,6 +56,7 @@ document.getElementById("select-tone-1").onclick = () => {
     root.style.setProperty("--theme-color-hands", "#ffce02");
 };
 
+// --------------------------------------  background settings  --------------------------------------
 const customThemeBackgroundColor = document.querySelector(".custom-theme-bg-color[type=color]");
 customThemeBackgroundColor.addEventListener("change", (e) => {
     console.log("Custom " + e.target.value);
@@ -50,36 +64,45 @@ customThemeBackgroundColor.addEventListener("change", (e) => {
     //document.documentElement.style.setProperty(colorVariable, e.target.value);
 });
 
-let speed;
-document.getElementById("fast-speed").onclick = () => {
-    speed = 2;
-};
-document.getElementById("medium-speed").onclick = () => {
-    speed = 1;
-};
-document.getElementById("slow-speed").onclick = () => {
-    speed = 0;
-};
-
+// --------------------------------------  Local storage settings  --------------------------------------
 document.getElementById("saveLocalStorage").onclick = () => {
-    console.log("Save local storage");
-
     const bgColor = getComputedStyle(document.body).getPropertyValue("--theme-color-back");
     const skinTone = getComputedStyle(document.getElementById("shoot-rock")).getPropertyValue(
         "--theme-color-hands"
     );
-    saveLocalStorage(speed, skinTone, bgColor);
+    saveLocalStorage(mySpeed, skinTone, bgColor);
 };
 
 function saveLocalStorage(speed = 1, skinTone = "#ca9062", bgColor = "#FFFFFF") {
     const storagePreferences = {
         speedSettings: speed,
         skinTone: skinTone,
-        customerBackGroundColor: bgColor,
+        customBackGroundColor: bgColor,
     };
-    console.log(storagePreferences);
+    localStorage.setItem("storage", true);
+    localStorage.setItem("preferences", JSON.stringify(storagePreferences));
 
     $("#staticBackdrop").modal("hide");
+}
+
+// --------------------------------------  on page load  --------------------------------------
+window.onload = () => {
+    bLocalStorage = localStorage.getItem("storage");
+    window.savedPreferences = JSON.parse(localStorage.getItem("preferences"));
+
+    if (bLocalStorage) {
+        root.style.setProperty("--theme-color-hands", savedPreferences.skinTone);
+        root.style.setProperty("--theme-color-back", savedPreferences.customBackGroundColor);
+
+        lastUpdated(savedPreferences.speedSettings);
+    } else if (!bLocalStorage) {
+    }
+};
+
+function lastUpdated(speed) {
+    console.log("lastUpdated " + speed);
+    window.counterSpeed = speed;
+    return speed;
 }
 
 // data-dismiss="modal"

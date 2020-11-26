@@ -24,6 +24,8 @@ const playOptions = [
     "<i class='fas fa-hand-rock'></i>",
     "<i class='fas fa-hand-scissors'></i>",
 ];
+
+const speedOptions = [400, 750, 1000];
 let playIndex;
 let gameResultsOutcome;
 let timeleft;
@@ -52,7 +54,8 @@ document.getElementById("dropdownMenuButton").onclick = () => {
 window.addEventListener("load", () => {
     document.getElementById("the-humans-play").innerHTML = " ";
     document.getElementById("the-computers-play").innerHTML = " ";
-
+    // console.log(window.speedOptions[window.speed]);
+    window.mySpeed;
     gameStatusAndCountDown.textContent = "Click!";
 });
 
@@ -60,6 +63,7 @@ window.addEventListener("load", () => {
 document.body.addEventListener("click", countDown);
 // -------------------------------------- 2a --------------------------------------
 function countDown() {
+    console.log("In the count " + speedOptions[top.counterSpeed]);
     document.getElementById("the-humans-play").innerHTML = " ";
     document.getElementById("the-computers-play").innerHTML = " ";
     timeleft = 1;
@@ -124,5 +128,5 @@ function countDown() {
             document.getElementById("the-computers-play").innerHTML = " ";
             console.log(timeleft);
         }
-    }, 1000);
+    }, speedOptions[top.counterSpeed]);
 }
