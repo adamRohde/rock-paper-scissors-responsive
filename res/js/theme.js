@@ -44,18 +44,45 @@ document.getElementById("select-tone-1").onclick = () => {
 };
 
 const customThemeBackgroundColor = document.querySelector(".custom-theme-bg-color[type=color]");
-//const lightThemeBackgroundColor = document.querySelector(".light-theme-bg-color[type=color]");
-
 customThemeBackgroundColor.addEventListener("change", (e) => {
     console.log("Custom " + e.target.value);
     root.style.setProperty("--theme-color-back", e.target.value);
     //document.documentElement.style.setProperty(colorVariable, e.target.value);
 });
 
-function saveLocalStorage() {
-    console.log("save local storage");
+let speed;
+document.getElementById("fast-speed").onclick = () => {
+    speed = 2;
+};
+document.getElementById("medium-speed").onclick = () => {
+    speed = 1;
+};
+document.getElementById("slow-speed").onclick = () => {
+    speed = 0;
+};
+
+document.getElementById("saveLocalStorage").onclick = () => {
+    console.log("Save local storage");
+
+    const bgColor = getComputedStyle(document.body).getPropertyValue("--theme-color-back");
+    const skinTone = getComputedStyle(document.getElementById("shoot-rock")).getPropertyValue(
+        "--theme-color-hands"
+    );
+    saveLocalStorage(speed, skinTone, bgColor);
+};
+
+function saveLocalStorage(speed = 1, skinTone = "#ca9062", bgColor = "#FFFFFF") {
+    const storagePreferences = {
+        speedSettings: speed,
+        skinTone: skinTone,
+        customerBackGroundColor: bgColor,
+    };
+    console.log(storagePreferences);
+
+    $("#staticBackdrop").modal("hide");
 }
 
+// data-dismiss="modal"
 // Dark Theme Colors
 //     --theme-color-nav: rgb(19, 13, 13);
 //     --theme-color-back: rgb(59, 52, 52);

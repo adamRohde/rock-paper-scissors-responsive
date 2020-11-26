@@ -88,15 +88,15 @@
 
             <div>
                 <div class="modal-body">
-                    <input type="radio" name="rad_speed_fast" id="fast-speed">
+                    <input type="radio" name="speed-setting" id="fast-speed">
                     <label class="dark-mode" for="dark_mode">Super fast speed</label>
                 </div>
                 <div class="modal-body">
-                    <input type="radio" name="rad_speed_medium" id="medium-speed" checked="checked">
+                    <input type="radio" name="speed-setting" id="medium-speed" checked="checked">
                     <label class="dark-mode" for="dark_mode">Medium speed (default)</label>
                 </div>
                 <div class="modal-body">
-                    <input type="radio" name="rad_speed_slow" id="slow-speed">
+                    <input type="radio" name="speed-setting" id="slow-speed">
                     <label class="slow-speed" for="slow-speed">Slow speed</label>
                 </div>
             </div>
@@ -149,9 +149,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveLocalStorage()">Save localstorage</button>
+                <button type="button" class="btn btn-primary" id="saveLocalStorage">Save localstorage</button>
             </div>
-        
     </div>
 </div>
 
