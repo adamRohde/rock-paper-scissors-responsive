@@ -9,7 +9,7 @@ https://adamrohde.github.io/rock-paper-scissors/
 
 ![alt text](https://github.com/adamRohde/rock-paper-scissors/blob/master/res/RPS%20light%20preview.jpg)
 
-![alt text](https://github.com/adamRohde/rock-paper-scissors/blob/master/res/RPS%20light%20preview.jpg)
+![alt text](https://github.com/adamRohde/rock-paper-scissors/blob/master/res/RPS%20game%20preferences.jpg)
 
 
 
