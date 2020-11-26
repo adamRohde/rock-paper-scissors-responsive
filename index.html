@@ -80,22 +80,78 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Game Preferences</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
+            <div>
+                <div class="modal-body">
+                    <input type="radio" name="rad_speed_fast" id="fast-speed">
+                    <label class="dark-mode" for="dark_mode">Super fast speed</label>
+                </div>
+                <div class="modal-body">
+                    <input type="radio" name="rad_speed_medium" id="medium-speed" checked="checked">
+                    <label class="dark-mode" for="dark_mode">Medium speed (default)</label>
+                </div>
+                <div class="modal-body">
+                    <input type="radio" name="rad_speed_slow" id="slow-speed">
+                    <label class="slow-speed" for="slow-speed">Slow speed</label>
+                </div>
+            </div>
+
             <div class="modal-body">
-                <input type="radio" name="rad2" id="dark-mode">
-                <label class="dark-mode" for="dark_mode">Dark Mode</label>
-                <input type="radio" name="rad2" id="dark-mode">
-                <label class="dark-mode" for="dark_mode">Dark Mode</label>
+                <label for="btn-toolbar">Skin tone</label>
+
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group" role="group" aria-label="First group">
+                        <button type="button" class="btn">
+                            <div class="tone-6">
+                                <i class='fas fa-hand-scissors' id="select-tone-6"></i>
+                            </div>
+                        </button>
+                        <button type="button" class="btn">
+                            <div class="tone-5">
+                                <i class='fas fa-hand-scissors' id="select-tone-5"></i>
+                            </div>
+                        </button>
+                        <button type="button" class="btn">
+                            <div class="tone-4">
+                                <i class='fas fa-hand-scissors' id="select-tone-4"></i>
+                            </div>
+                        </button>
+                        <button type="button" class="btn">
+                            <div class="tone-3">
+                                <i class='fas fa-hand-scissors' id="select-tone-3"></i>
+                            </div>
+                        </button>
+                        <button type="button" class="btn">
+                            <div class="tone-2">
+                                <i class='fas fa-hand-scissors' id="select-tone-2"></i>
+                            </div>
+                        </button>
+                        <button type="button" class="btn">
+                            <div class="tone-1">
+                                <i class='fas fa-hand-scissors' id="select-tone-1"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-body">
+                <label for="dark-theme-bg-color">Dark theme background color</label>
+                <input class="dark-theme-bg-color" type="color" id="dark-theme-bg-color_">
+            </div> -->
+            <div class="modal-body">
+                <label for="custom-theme-bg-color">Custom theme background color</label>
+                <input class="custom-theme-bg-color" type="color" id="custom-theme-bg-color">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveLocalStorage()">Save localstorage</button>
             </div>
-        </div>
+        
     </div>
 </div>
 
