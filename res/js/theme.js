@@ -96,13 +96,14 @@ window.onload = () => {
 
         lastUpdated(savedPreferences.speedSettings);
     } else if (!bLocalStorage) {
+        lastUpdated(1);
     }
 };
 
 function lastUpdated(speed) {
     console.log("lastUpdated " + speed);
     window.counterSpeed = speed;
-    return speed;
+    return speed || 1;
 }
 
 // data-dismiss="modal"
