@@ -34,45 +34,50 @@
         </div>
     </nav>
     
-    <div class="wrapper">
-        <div class="column-left">
-            <div></div>
-            <div class="human-score-bars" id="add_point_for_human">
+    <div class="main-parent-container">
+
+        <div class="parent1">
+            <div class="main-three-columns">              
+                <div class="human-score-bars" id="add_point_for_human">
+                </div>              
+                <div class="column-center">
+                    <div class="row-titles">
+                        <div>You</div>
+                        <div>Computer</div>
+                    </div>
+                    
+                    <div class="row-plays">
+                        <div id="the-humans-play">human play</div>
+                        <div id="the-computers-play">computer play</div>
+                    </div>
+
+                    <div class="row-status" id="game-countdown-and-status">
+                        <h1>You win!</h1>
+                    </div>
+                </div>                
+                <div class="computer-score-bars" id="add_point_for_computer">
+                </div>     
             </div>
-            <div></div>
         </div>
-        <div class="column-center">
-            <div class="row-titles">
-                <div>Human</div>
-                <div>Computer</div>
-            </div>
-            <div class="row-plays">
-                <div id="the-humans-play">human play</div>
-                <div id="the-computers-play">computer play</div>
-            </div>
-            <div class="row-status" id="game-countdown-and-status">
-                <h1>You win!</h1>
-            </div>
-            <div class="row-choices">
-                <div></div>
-                <div id="shoot-rock">
+
+  
+        
+        <div class="parent2">
+           
+            <div class="row-choices-parent">
+                <div class="button-rock" id="shoot-rock">
                     <i class='fas fa-hand-rock'></i>
                 </div>
-                <div id="shoot-paper">
+                <div class="button-paper" id="shoot-paper">
                     <i class='fas fa-hand-paper'></i>
                 </div>
-                <div id="shoot-scissors">
+                <div class="button-scissors" id="shoot-scissors">
                     <i class='fas fa-hand-scissors'></i>
                 </div>
-                <div></div>
             </div>
+
         </div>
-        <div class="column-right">
-            <div></div>
-            <div class="computer-score-bars" id="add_point_for_computer">
-            </div>
-            <div></di>
-        </div>        
+
     </div>
 
 <!-- Modal -->

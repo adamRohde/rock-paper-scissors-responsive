@@ -14,6 +14,10 @@
     --skin-tone-3: #e2b084;
     --skin-tone-2: #ffddb9;
     --skin-tone-1: #ffce02;
+
+    --app-height: 80vh;
+    --button-height: 20vh;
+    --column-height: 45vh;
 }
 
 .tone-6 {
@@ -44,45 +48,46 @@ body {
     background: var(--theme-color-back);
 }
 
-/* ####################### */
-/* Main Column */
-/* ####################### */
-.wrapper {
-    position: absolute;
-    top: 65px;
-    bottom: 0;
-    right: 0;
-    left: 0;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main-parent-container {
+    /* background: var(--theme-color-back); */
+    height: var(--app-height);
+    display: flex;
+    flex-direction: column;
+}
+
+.parent1 {
+    /* background: var(--theme-color-back); */
+    padding: 0px;
+    flex-grow: 1;
+    margin: 0.2em;
+}
+
+.parent2 {
+    /* background: var(--theme-color-back); */
+    padding: 0px;
+    margin: 0.2em;
+}
+
+.main-three-columns {
     display: grid;
-    grid-template-columns: 1.2fr 5fr 1.2fr;
-}
-
-.wrapper > div {
-    background-color: var(--theme-color-back);
-}
-
-/* ####################### */
-/* Left Score */
-/* ####################### */
-
-.column-left {
-    display: grid;
-    grid-template-rows: 0.5fr 3fr 1fr;
-}
-
-.column-left > div {
-    background-color: var(--theme-color-back);
+    height: var(--column-height);
+    grid-template-columns: 1fr 4fr 1fr;
 }
 
 .human-score-bars {
+    background: var(--theme-color-back);
     display: grid;
-    grid-template-columns: 1fr;
-    margin-left: 0.5em;
-    grid-auto-rows: auto;
-    grid-gap: 5px;
-    grid-template-areas: "column-10 column-9 column-8 column-7 column-6 column-5 column-4 column-3 column-2 column-1";
+    align-self: end;
+    grid-template-rows: repeat(10, 30px);
 }
+
 .human-score-bars > grid-item {
+    margin: 0.15em;
     background: var(--theme-color-scoreBars);
 }
 
@@ -136,9 +141,11 @@ body {
 /* ####################### */
 
 .column-center {
+    padding: 0px;
+    height: var(--center-columns-max);
     display: grid;
-    grid-template-rows: 2fr 3fr 2fr 3fr;
-    background-color: var(--theme-color-back);
+    align-self: end;
+    grid-template-rows: 1fr 3fr 1fr;
 }
 
 /* ####################### */
@@ -155,7 +162,7 @@ body {
     margin: 3px;
     text-align: center;
     color: var(--theme-color-text);
-    font-size: 2em;
+    font-size: 1em;
     font-family: "Goldman", cursive;
     font-family: "Stalinist One", cursive;
 }
@@ -167,13 +174,14 @@ body {
 .row-plays {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    /* min-height: 60px; */
     background-color: var(--theme-color-back);
 }
 
 .row-plays > div {
-    text-align: center;
-    font-size: 7.5em;
+    display: grid;
+    place-items: center;
+    font-size: 7vh;
     color: var(--theme-color-hands);
 }
 
@@ -183,11 +191,11 @@ body {
 
 .row-status {
     display: grid;
-    background-color: var(--theme-color-back);
+    background: var(--theme-color-back);
     grid-template-columns: 1fr;
     align-items: center;
     text-align: center;
-    font-size: 4em;
+    font-size: 1em;
     color: var(--theme-color-text);
     font-family: "Goldman", cursive;
     font-family: "Stalinist One", cursive;
@@ -200,47 +208,55 @@ body {
 /* The rock, paper and scissors */
 /* ####################### */
 
-.row-choices {
+.row-choices-parent {
+    padding: 0px;
+    min-height: var(--button-height);
     display: grid;
-    background-color: var(--theme-color-back);
-    grid-template-columns: 1fr 4fr 4fr 4fr 1fr;
-    align-items: center;
     gap: 0.4em;
+    margin: 0 0.4em 0 0.4em;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.row-choices > div {
-    background-color: var(--theme-color-buttons);
-    align-items: top;
-    text-align: center;
-    font-size: 5.5em;
-    border-radius: 0.1em;
+/* --------------------------------------- Buttons --------------------------------------- */
+/* Button 1  */
+.button-rock {
+    background: var(--theme-color-buttons);
+    border-radius: 3vh;
+    font-size: 10vh;
     color: var(--theme-color-hands);
-}
-
-/* ####################### */
-/* Right Score */
-/* ####################### */
-
-.column-right {
     display: grid;
-    grid-template-rows: 0.5fr 3fr 1fr;
+    place-items: center;
 }
 
-.column-right > div {
-    background-color: var(--theme-color-back);
+/* Button 2 */
+.button-paper {
+    background: var(--theme-color-buttons);
+    border-radius: 3vh;
+    font-size: 10vh;
+    color: var(--theme-color-hands);
+    display: grid;
+    place-items: center;
+}
+
+/* Button 3 */
+.button-scissors {
+    background: var(--theme-color-buttons);
+    border-radius: 3vh;
+    font-size: 10vh;
+    color: var(--theme-color-hands);
+    display: grid;
+    place-items: center;
 }
 
 .computer-score-bars {
+    background: var(--theme-color-back);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    grid-gap: 5px;
-    margin-right: 0.5em;
-
-    grid-template-areas: "column-10 column-9 column-8 column-7 column-6 column-5 column-4 column-3 column-2 column-1";
+    align-self: end;
+    grid-template-rows: repeat(10, 30px);
 }
 
 .computer-score-bars > grid-item {
+    margin: 0.15em;
     background: var(--theme-color-scoreBars);
 }
 
@@ -292,6 +308,7 @@ body {
 /* ####################### */
 /* Nav bar */
 /* ####################### */
+
 .navbar {
     background: var(--theme-color-nav);
     height: auto;
