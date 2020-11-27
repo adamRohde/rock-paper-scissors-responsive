@@ -6,5 +6,6 @@ https://adamrohde.github.io/rock-paper-scissors-responsive/
 
 To-do
  - Media queries
+ - Fix speed settings
 
 
