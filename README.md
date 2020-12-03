@@ -1,5 +1,5 @@
 
-Rock, paper, scissors game.  Used CSS grid, and Flex-box to try and make responsive.
+Mobile friendly rock, paper, scissors game.  Used CSS grid, and Flex-box to try and make responsive.
 
 To-do
  - Media queries
