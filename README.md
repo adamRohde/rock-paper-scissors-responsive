@@ -1,20 +1,14 @@
 
-My interpretation of the classic game, rock, paper, scissors.  
+Mobile friendly rock, paper, scissors game.  Used CSS grid, and Flex-box to try and make responsive.
 
-Features not finished
- - local storage saving
- - local storage retrieval 
- - speed settings
+To-do
+ - Media queries
+ - Fix speed settings
+ 
+Link to app
+ - https://adamrohde.github.io/rock-paper-scissors-responsive/
 
-https://adamrohde.github.io/rock-paper-scissors/
 
-
-### Image
-![alt text](https://github.com/adamRohde/rock-paper-scissors/blob/master/res/RPS%20dark%20preview.jpg)
-
-![alt text](https://github.com/adamRohde/rock-paper-scissors/blob/master/res/RPS%20light%20preview.jpg)
-
-![alt text](https://github.com/adamRohde/rock-paper-scissors/blob/master/res/RPS%20game%20preferences.jpg)
 
 
 
